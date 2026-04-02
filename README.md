@@ -1,6 +1,7 @@
 # RecipeHub
 
 RecipeHub is a full-stack MEAN recipe sharing platform with JWT authentication, Multer-based image uploads, favorites, ratings, search, and a polished Angular 20 frontend styled with Tailwind CSS.
+Modern full-stack recipe sharing platform with dashboard UI, JWT authentication, image upload, and responsive design using the MEAN stack.
 
 ## Stack
 
