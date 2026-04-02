@@ -1,0 +1,39 @@
+{
+  "name": "recipehub-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "jest --config jest.config.js --runInBand"
+  },
+  "dependencies": {
+    "@angular/animations": "^20.2.4",
+    "@angular/common": "^20.2.4",
+    "@angular/compiler": "^20.2.4",
+    "@angular/core": "^20.2.4",
+    "@angular/forms": "^20.2.4",
+    "@angular/platform-browser": "^20.2.4",
+    "@angular/router": "^20.2.4",
+    "rxjs": "^7.8.1",
+    "tslib": "^2.7.0",
+    "zone.js": "^0.15.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^20.2.3",
+    "@angular/cli": "^20.2.3",
+    "@angular/compiler-cli": "^20.2.4",
+    "@angular/platform-browser-dynamic": "^20.3.18",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22.7.4",
+    "autoprefixer": "^10.4.20",
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0",
+    "jest-preset-angular": "^16.1.1",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13",
+    "ts-jest": "^29.4.6",
+    "typescript": "^5.6.3"
+  }
+}

@@ -1,0 +1,48 @@
+version: '3.9'
+services:
+  mongodb:
+    image: mongo:7
+    container_name: recipehub-mongodb
+    restart: unless-stopped
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_DATABASE: recipehub
+    volumes:
+      - mongodb_data:/data/db
+    healthcheck:
+      test: ['CMD', 'mongosh', '--eval', 'db.adminCommand("ping")']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+    container_name: recipehub-backend
+    restart: unless-stopped
+    environment:
+      PORT: 5000
+      MONGO_URI: mongodb://mongodb:27017/recipehub
+      JWT_SECRET: replace_with_a_long_random_secret
+      CLIENT_URL: http://localhost:8080
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    ports:
+      - '5000:5000'
+    volumes:
+      - ./backend/uploads:/app/uploads
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: recipehub-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - '8080:80'
+
+volumes:
+  mongodb_data:

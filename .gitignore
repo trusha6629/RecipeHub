@@ -1,0 +1,8 @@
+node_modules
+dist
+.angular
+backend/uploads/*
+!backend/uploads/.gitkeep
+backend/.env
+frontend/.angular
+npm-debug.log*
